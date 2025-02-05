@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Inventory Management System</h1>
+            <div class="total-value" id="totalValue">Total Value: $0.00</div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search items...">
+        </div>
+
+        <div class="add-item-section">
+            <button id="addItemBtn" class="primary-btn">Add New Item</button>
+            <div id="addItemForm" class="hidden">
+                <input type="text" id="itemName" placeholder="Item Name">
+                <input type="number" id="itemQuantity" placeholder="Quantity">
+                <input type="number" id="itemPrice" step="0.01" placeholder="Price">
+                <input type="text" id="itemCategory" placeholder="Category">
+                <button id="submitItem" class="success-btn">Submit</button>
+                <button id="cancelAdd" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+
+        <div class="inventory-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Item</h2>
+            <input type="text" id="editName" placeholder="Item Name">
+            <input type="number" id="editQuantity" placeholder="Quantity">
+            <input type="number" id="editPrice" step="0.01" placeholder="Price">
+            <input type="text" id="editCategory" placeholder="Category">
+            <div class="modal-buttons">
+                <button id="saveEdit" class="success-btn">Save</button>
+                <button id="cancelEdit" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
